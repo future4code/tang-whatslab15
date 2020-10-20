@@ -1,0 +1,23 @@
+
+.Form {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.user {
+    width: 20%;
+}
+
+
+.message {
+    width: 60%;
+}
+
+
+.enviar {
+    width: 20%;
+}
