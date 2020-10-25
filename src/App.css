@@ -9,7 +9,30 @@
 
 }
 
-.area-de-mensagem {
+.AreaDeMensagem {
   border: 1px solid black;
   flex-grow: 1;
+}
+
+.Form {
+  width: 100%;
+  display: flex;
+
+}
+
+.user {
+  width: 20%;
+}
+
+.message {
+  width: 60%;
+}
+
+.enviar {
+
+  flex-grow: 1;
+}
+
+.UserName {
+  font-weight: bold;
 }
