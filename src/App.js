@@ -67,7 +67,7 @@ render() {
             
             return <div key={dado.id}>
                       <div><span className="UserName">{dado.autor}: </span> <span>{dado.conteudo}</span></div>
-                      <button onClick={this.apagarMensagem}></button>
+                      
                       <br/>
 
                     </div>
