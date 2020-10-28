@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Enviar from './pics/enviar.png'
+import Enviadas from './Enviadas';
 
 import './App.css';
 
@@ -16,6 +17,8 @@ export class App extends React.Component {
 
 onChangeUsuario = (event) => {
     this.setState({usuario: event.target.value});
+
+    
     //Apenas para testar se funcionou
     //console.log(this.state.usuario);
 }
@@ -26,8 +29,9 @@ onChangeMensagem = (event) => {
 }
 
 apertouEnter = (event) => {
+  console.log(event.keyCode);
   if(event.keyCode === 13) {
-    event.target.click();
+    this.enviarNovaMensagem();
   }
 }
 
@@ -42,11 +46,11 @@ enviarNovaMensagem = () => {
   const novaListaDeMensagens = [...this.state.mensagensEnviadas, novaMensagem];
 
   this.setState({mensagensEnviadas: novaListaDeMensagens});
-  
+  this.setState({mensagem: ''})
 }
 
-apagarMensagem = (mensagensEnviadas) => {
-  console.log(mensagensEnviadas)
+apagarMensagem = (mensagemEsp) => {
+  console.log(mensagemEsp )
 
   /*const novaListaDeMensagens = this.state.mensagensEnviadas.filter((mensagem) =>{
     return mensagemId !== mensagem.id;
@@ -57,33 +61,25 @@ apagarMensagem = (mensagensEnviadas) => {
 }
 
 
+
 render() {
 
   return (
     <div className="App">
     
     <div className="AreaDeMensagem"> 
-      {this.state.mensagensEnviadas.map((dado) => { 
-            
-            return <div key={dado.id}>
-                      <div><span className="UserName">{dado.autor}: </span> <span>{dado.conteudo}</span></div>
-                      
-                      <br/>
 
-                    </div>
-            
-            })}
-    </div>
+      <Enviadas arrayMensagens={this.state.mensagensEnviadas} apagar={this.apagarMensagem} /> 
+
+     </div>
 
     <div className="Form">
         
-        
-
         <input className="user" placeholder="Usuário" value={this.state.usuario} onChange={this.onChangeUsuario} />
 
-        <input className="message" placeholder="Mensagem" value={this.state.mensagem} onChange={this.onChangeMensagem} />
+        <input className="message" placeholder="Mensagem" value={this.state.mensagem} onChange={this.onChangeMensagem} onKeyUp={this.apertouEnter} />
 
-        <button className="enviar" onClick={this.enviarNovaMensagem} onKeyUp={this.apertouEnter}>Enviar</button>
+        <button className="enviar" onClick={this.enviarNovaMensagem} > <img src={Enviar} /></button>
 
     </div>
 

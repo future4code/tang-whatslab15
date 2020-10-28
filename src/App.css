@@ -12,6 +12,30 @@
 .AreaDeMensagem {
   border: 1px solid black;
   flex-grow: 1;
+  background-color: rgba(199, 48, 245, 0.747);
+}
+
+.mensagens {
+  display: flex;
+  flex-direction: column;
+}
+
+.mensagemenviada {
+  margin: 1em;
+  align-self: flex-start;
+  padding: 0.2em 1.5em 0.2em 1em;
+  background-color: rgb(206, 200, 200);
+  border-radius: 40px;
+  width: fit-content;
+}
+
+.mensagemenviada-2 {
+  margin: 1em;
+  align-self: flex-end;
+  padding: 0.2em 1.5em 0.2em 1em;
+  background-color: rgb(17, 158, 71);
+  border-radius: 40px;
+  width: fit-content;
 }
 
 .Form {
@@ -25,12 +49,17 @@
 }
 
 .message {
-  width: 60%;
+  width: 75%;
 }
 
 .enviar {
 
   flex-grow: 1;
+
+}
+
+.enviar>img {
+  width: 20%;
 }
 
 .UserName {
